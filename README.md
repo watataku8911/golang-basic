@@ -78,3 +78,4 @@ for 初期値; 条件式; 初期値をどうする？ {
 ```
 
 [例](https://github.com/watataku8911/golang-basic/blob/master/for.go)
+
