@@ -213,3 +213,4 @@ func (レシーバ名  レシーバの型) 関数名(引数) (戻り値) {
 [参照](https://qiita.com/watataku8911/items/7c32df8a8c6b59d7401c)
 
 [例](https://github.com/watataku8911/golang-basic/blob/master/time.go)
+
