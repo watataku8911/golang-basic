@@ -1,20 +1,21 @@
 package main
+
 import "fmt"
 
-func callByValue(i int) {
-    i = 20 // 値を上書きする
-}
 
-func callByRef(i *int) {
-    *i = 20 // 参照先を上書きする
-}
+// func main() {
+//     var hoge int = 10 //int型の変数　
+//     var bow *int = &hoge //int型へのポイント型
+
+//     fmt.Println(hoge) //=> 10
+//     fmt.Println(bow) //=> 0x10414020   
+// }
+
 
 func main() {
-    var i int = 10
-    callByValue(i) // 値を渡す
-    fmt.Println(i) // 10
-    callByRef(&i) // アドレスを渡す
-    fmt.Println(i) // 20
+    var hoge int = 10
+    var bow *int = &hoge
+    fmt.Println(*bow) //=> 10
 }
 
 
