@@ -2,28 +2,67 @@ package main
 
 import "fmt"
 
-type User struct {
-	email string
-	Name string
-	Age int
+// ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+// ーーーーーーーーーーーーーーーーーーーーー①変数定義後にフィールドを設定する方法ーーーー
+// ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
+// type Person struct {
+//    firstName string 
+//    age int
+// }
+
+// func main(){
+//   var mike Person
+//   mike.firstName = "Mike"
+//   mike.age = 20
+//   fmt.Println(mike.firstName, mike.age) //=> Mike 20
+// }
+
+// ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+// ーーーーーーーーーーーーーーーーーーーーー②{}で順番にフィールドの値を渡す方法ーーーー
+// ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
+// type Person struct {
+//    firstName string 
+//    age int
+// }
+
+// func main(){
+//   bob := Person{"Bob", 30}
+//   fmt.Println(bob.firstName, bob.age) //=>Bob 30
+// }
+
+// ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+// ーーーーーーーーーーーーーーーーーーーーー③フィールド名を ： で指定する方法ーーーー
+// ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
+// type Person struct {
+//    firstName string 
+//    age int
+// }
+
+// func main(){
+//   sam := Person{age: 15, firstName: "Sam"}
+//   fmt.Println(sam.firstName, sam.age) //=>Sam 15
+// }
+
+// ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+// ーーーーーーーーーーーーーーーーーーーーー④初期化関数を作成することで初期化をするーーーー
+// ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
+type Person struct {
+   firstName string 
+   age int
 }
 
-func newUser(name string, age int, email string) *User {
-	u := new(User)
-	u.Name = name
-	u.Age = age
-	u.email = email
-	return u
+func newPerson(firstName string, age int) *Person{
+     person := new(Person)
+     person.firstName = firstName
+     person.age = age
+     return person
 }
 
-func (u User) greet() string {
-	return "hello," + u.Name;
-}
-
-func main() {
-	var user *User = newUser("taro",30, "hoge@example.ac.jp")
-	fmt.Println(user.Name)
-	fmt.Println(user.Age)
-	fmt.Println(user.email)
-	fmt.Println(user.greet())
+func main(){
+  var jen *Person = newPerson("Jennifer", 40)
+  fmt.Println(jen.firstName, jen.age) //=>Jennifer 40
 }
