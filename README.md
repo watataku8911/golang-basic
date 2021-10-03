@@ -174,7 +174,13 @@ func 関数名(引数 データ型) 戻り値の型 {
 
 [参照](https://qiita.com/watataku8911/items/ef518d59a4ae31b45b63)
 
-[例](https://github.com/watataku8911/golang-basic/blob/master/pointer.go)
+### 変数のアドレス取得方法
+
+Goでは``&`` を用いることで変数のアドレスの取得が可能です。
+
+### ポインタ型変数
+
+ポインタ型にしたい変数に``*``をつけて宣言します。
 
 ## 構造体
 
